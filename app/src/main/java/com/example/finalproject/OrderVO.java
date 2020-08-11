@@ -5,7 +5,7 @@ public class OrderVO {
     /*계정테이블(account)*/
     private String account_email;//이메일(아이디대체)
     private String account_name;//이름
-    private String account_phone;//전화번호
+    private String account_tel;//전화번호
 
     /*상품테이블(productinfo_order)*/
     private int productinfo_productcode;
@@ -36,12 +36,12 @@ public class OrderVO {
         this.account_name = account_name;
     }
 
-    public String getAccount_phone() {
-        return account_phone;
+    public String getAccount_tel() {
+        return account_tel;
     }
 
-    public void setAccount_phone(String account_phone) {
-        this.account_phone = account_phone;
+    public void setAccount_tel(String account_tel) {
+        this.account_tel = account_tel;
     }
 
     public int getProductinfo_productcode() {
