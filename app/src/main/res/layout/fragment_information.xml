@@ -1,21 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".InformationFragment"
-    android:orientation="vertical">
+    android:gravity="center"
+    android:padding="10sp">
 
     <!-- TODO: Update blank fragment layout -->
     <TextView
+        android:id="@+id/txtEmailEx"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="id"
-        android:textSize="30sp"/>
-    <Button
-        android:id="@+id/btnOrderFinal"
+        android:text="아이디(이메일)"
+        android:textSize="20sp"
+        android:layout_alignBottom="@id/edtEmailEx"
+        android:layout_alignTop="@id/edtEmailEx"
+        android:gravity="center"/>
+    <EditText
+        android:id="@+id/edtEmailEx"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="주문하기"/>
-
-</LinearLayout>
+        android:hint="설명"
+        android:textSize="15sp"
+        android:layout_toRightOf="@id/txtEmailEx"
+        android:enabled="false" />
+    <TextView
+        android:id="@+id/txtNameEx"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="이름"
+        android:layout_below="@id/txtEmailEx"
+        android:textSize="20sp"
+        android:layout_alignBottom="@id/edtNameEx"
+        android:layout_alignTop="@id/edtNameEx"
+        android:layout_alignRight="@id/txtEmailEx"
+        android:layout_alignLeft="@id/txtEmailEx"
+        android:gravity="center" />
+    <EditText
+        android:id="@+id/edtNameEx"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="설명"
+        android:layout_toRightOf="@id/txtNameEx"
+        android:layout_below="@id/edtEmailEx"
+        android:textSize="15sp"
+        android:layout_alignLeft="@id/edtEmailEx"
+        android:enabled="false" />
+    <TextView
+        android:id="@+id/txtTelEx"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="전화번호"
+        android:textSize="20sp"
+        android:layout_below="@id/txtNameEx"
+        android:layout_alignRight="@id/txtEmailEx"
+        android:layout_alignLeft="@id/txtEmailEx"
+        android:layout_alignTop="@id/edtTelEx"
+        android:layout_alignBottom="@id/edtTelEx"
+        android:gravity="center"/>
+    <EditText
+        android:id="@+id/edtTelEx"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="설명"
+        android:layout_toRightOf="@id/txtTelEx"
+        android:layout_below="@id/edtNameEx"
+        android:textSize="15sp"
+        android:enabled="false" />
+</RelativeLayout>
