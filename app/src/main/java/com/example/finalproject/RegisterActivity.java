@@ -91,12 +91,12 @@ public class RegisterActivity extends AppCompatActivity {
 
                     //mysql도 동시에 등록
                     OrderVO orderVO = new OrderVO();
-                    orderVO.setAccount_email(edtRegisterEmail.getText().toString());
-                    orderVO.setAccount_name(edtRegisterName.getText().toString());
+                    orderVO.setEmail(edtRegisterEmail.getText().toString());
+                    orderVO.setName(edtRegisterName.getText().toString());
                     String strtel = edtRegisterTel1.getText().toString() + "-" + edtRegisterTel2.getText().toString() + "-" + edtRegisterTel3.getText().toString();
-                    orderVO.setAccount_tel(strtel);
+                    orderVO.setTel(strtel);
 
-                    Call<Void> call = remoteService.insertAccount(orderVO.getAccount_email(),orderVO.getAccount_name(),orderVO.getAccount_tel());
+                    Call<Void> call = remoteService.insertAccount(orderVO.getEmail(),orderVO.getName(),orderVO.getTel());
                     call.enqueue(new Callback<Void>() {
                         @Override
                         public void onResponse(Call<Void> call, Response<Void> response) {

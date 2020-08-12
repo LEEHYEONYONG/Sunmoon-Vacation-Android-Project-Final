@@ -19,6 +19,7 @@ public class OrderActivity extends AppCompatActivity {
     String email;//MainActivity에서 받아온 이메일(아이디)
     ViewPager pager;
     TabLayout tab;
+    PageAdapter ad;
     ArrayList<Fragment> array;
 
 
@@ -36,12 +37,12 @@ public class OrderActivity extends AppCompatActivity {
         tab=findViewById(R.id.tab);
         pager=findViewById(R.id.pager);
 
-        tab.addTab(tab.newTab().setText("주문"));
-        tab.addTab(tab.newTab().setText("주문내역"));
-        tab.addTab(tab.newTab().setText("정보"));
 
+        tab.addTab(tab.newTab().setText("주문"));
         tab.getTabAt(0).setIcon(R.drawable.ic_baseline_local_grocery_store_24);
+        tab.addTab(tab.newTab().setText("주문내역"));
         tab.getTabAt(1).setIcon(R.drawable.ic_baseline_featured_play_list_24);
+        tab.addTab(tab.newTab().setText("정보"));
         tab.getTabAt(2).setIcon(R.drawable.ic_baseline_info_24);
 
         array=new ArrayList<>();
@@ -49,9 +50,8 @@ public class OrderActivity extends AppCompatActivity {
         array.add(new ListFragment());
         array.add(new InformationFragment());
 
-        PageAdapter ad = new PageAdapter(getSupportFragmentManager());
+        ad = new PageAdapter(getSupportFragmentManager(),FragmentStatePagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
         pager.setAdapter(ad);
-
         pager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tab));
         tab.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
@@ -72,11 +72,18 @@ public class OrderActivity extends AppCompatActivity {
 
     }
 
-    class PageAdapter extends FragmentStatePagerAdapter{
 
+    class PageAdapter extends FragmentStatePagerAdapter{
+        public PageAdapter(@NonNull FragmentManager fm, int behavior) {
+            super(fm, behavior);
+        }
+        /*
         public PageAdapter(@NonNull FragmentManager fm) {
             super(fm);
         }
+        */
+
+
 
         @NonNull
         @Override

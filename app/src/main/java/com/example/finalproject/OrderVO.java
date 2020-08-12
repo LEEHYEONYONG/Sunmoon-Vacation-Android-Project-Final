@@ -3,118 +3,98 @@ package com.example.finalproject;
 public class OrderVO {
 
     /*계정테이블(account)*/
-    private String account_email;//이메일(아이디대체)
-    private String account_name;//이름
-    private String account_tel;//전화번호
+    private String email;//이메일(아이디대체),주문테이블 외래키(주문이메일)
+    private String name;//이름
+    private String tel;//전화번호
 
     /*상품테이블(productinfo_order)*/
-    private int productinfo_productcode;
-    private String productinfo_productName;
-    private int productinfo_price;
-    private String productinfo_image;
+    private int productcode;//상품코드,주문테이블 외래키(주문상품코드)
+    private String productname;//상품이름
+    private int price;//가격
+    private String image;//이미지
 
     /*주문테이블(orderinfo)*/
-    private int orderinfo_ordercode;
-    private String orderinfo_ordertime;
-    private int orderinfo_count;
-    private String orderinfo_email;
-    private int orderinfo_productcode;
+    private int ordercode;//주문코드
+    private String ordertime;//주문시간
+    private int count;//개수
 
-    public String getAccount_email() {
-        return account_email;
+    public String getEmail() {
+        return email;
     }
 
-    public void setAccount_email(String account_email) {
-        this.account_email = account_email;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
-    public String getAccount_name() {
-        return account_name;
+    public String getName() {
+        return name;
     }
 
-    public void setAccount_name(String account_name) {
-        this.account_name = account_name;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getAccount_tel() {
-        return account_tel;
+    public String getTel() {
+        return tel;
     }
 
-    public void setAccount_tel(String account_tel) {
-        this.account_tel = account_tel;
+    public void setTel(String tel) {
+        this.tel = tel;
     }
 
-    public int getProductinfo_productcode() {
-        return productinfo_productcode;
+    public int getProductcode() {
+        return productcode;
     }
 
-    public void setProductinfo_productcode(int productinfo_productcode) {
-        this.productinfo_productcode = productinfo_productcode;
+    public void setProductcode(int productcode) {
+        this.productcode = productcode;
     }
 
-    public String getProductinfo_productName() {
-        return productinfo_productName;
+    public String getProductname() {
+        return productname;
     }
 
-    public void setProductinfo_productName(String productinfo_productName) {
-        this.productinfo_productName = productinfo_productName;
+    public void setProductname(String productname) {
+        this.productname = productname;
     }
 
-    public int getProductinfo_price() {
-        return productinfo_price;
+    public int getPrice() {
+        return price;
     }
 
-    public void setProductinfo_price(int productinfo_price) {
-        this.productinfo_price = productinfo_price;
+    public void setPrice(int price) {
+        this.price = price;
     }
 
-    public String getProductinfo_image() {
-        return productinfo_image;
+    public String getImage() {
+        return image;
     }
 
-    public void setProductinfo_image(String productinfo_image) {
-        this.productinfo_image = productinfo_image;
+    public void setImage(String image) {
+        this.image = image;
     }
 
-    public int getOrderinfo_ordercode() {
-        return orderinfo_ordercode;
+    public int getOrdercode() {
+        return ordercode;
     }
 
-    public void setOrderinfo_ordercode(int orderinfo_ordercode) {
-        this.orderinfo_ordercode = orderinfo_ordercode;
+    public void setOrdercode(int ordercode) {
+        this.ordercode = ordercode;
     }
 
-    public String getOrderinfo_ordertime() {
-        return orderinfo_ordertime;
+    public String getOrdertime() {
+        return ordertime;
     }
 
-    public void setOrderinfo_ordertime(String orderinfo_ordertime) {
-        this.orderinfo_ordertime = orderinfo_ordertime;
+    public void setOrdertime(String ordertime) {
+        this.ordertime = ordertime;
     }
 
-    public int getOrderinfo_count() {
-        return orderinfo_count;
+    public int getCount() {
+        return count;
     }
 
-    public void setOrderinfo_count(int orderinfo_count) {
-        this.orderinfo_count = orderinfo_count;
+    public void setCount(int count) {
+        this.count = count;
     }
-
-    public String getOrderinfo_email() {
-        return orderinfo_email;
-    }
-
-    public void setOrderinfo_email(String orderinfo_email) {
-        this.orderinfo_email = orderinfo_email;
-    }
-
-    public int getOrderinfo_productcode() {
-        return orderinfo_productcode;
-    }
-
-    public void setOrderinfo_productcode(int orderinfo_productcode) {
-        this.orderinfo_productcode = orderinfo_productcode;
-    }
-
-
 }
