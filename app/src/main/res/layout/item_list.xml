@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_margin="10sp"
+    android:background="#03A9F4">
+    <ImageView
+        android:id="@+id/imgList"
+        android:layout_width="100sp"
+        android:layout_height="100sp"
+        android:src="@mipmap/ic_launcher"/>
+    <TextView
+        android:id="@+id/txtListOrderCode"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:hint="주문코드"
+        android:textSize="15sp"/>
+    <TextView
+        android:id="@+id/txtListOrdertime"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:hint="주문시간"
+        android:textSize="15sp"/>
+    <TextView
+        android:id="@+id/txtListEmail"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:hint="이메일"
+        android:textSize="15sp"/>
+    <TextView
+        android:id="@+id/txtListProductCode"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:hint="상품코드"
+        android:textSize="15sp"/>
+    <TextView
+        android:id="@+id/txtListProductName"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:hint="상품이름"
+        android:textSize="15sp"/>
+    <TextView
+        android:id="@+id/txtListProductPrice"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:hint="가격"
+        android:textSize="15sp"/>
+    <TextView
+        android:id="@+id/txtListSumPrice"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:hint="합계금액"
+        android:textSize="15sp"/>
+
+
+</LinearLayout>

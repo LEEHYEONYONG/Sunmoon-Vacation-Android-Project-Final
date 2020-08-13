@@ -18,7 +18,16 @@ public interface RemoteService {
     Call<Void> insertAccount(@Query("email") String email, @Query("name") String name,
                              @Query("tel") String tel);
 
+    @GET("select.jsp")
+    Call<List<OrderVO>> selectAccount(@Query("email") String email);
+
     /*finalOrder*/
+
+    @POST("insert.jsp")
+    Call<Void> insertOrder(@Query("ordertime") String ordertime,
+                           @Query("count") int count,
+                           @Query("email") String email,
+                           @Query("productcode") int productcode);
 
     /*finalProduct*/
     @GET("list.jsp")

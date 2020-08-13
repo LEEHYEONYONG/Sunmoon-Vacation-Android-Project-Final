@@ -23,8 +23,8 @@
         android:layout_height="wrap_content"
         android:hint="설명"
         android:textSize="15sp"
-        android:layout_toRightOf="@id/txtEmailEx"
-        android:enabled="false" />
+        android:layout_toRightOf="@id/txtEmailEx"/>
+        <!--android:enabled="false"-->
     <TextView
         android:id="@+id/txtNameEx"
         android:layout_width="wrap_content"
@@ -45,8 +45,8 @@
         android:layout_toRightOf="@id/txtNameEx"
         android:layout_below="@id/edtEmailEx"
         android:textSize="15sp"
-        android:layout_alignLeft="@id/edtEmailEx"
-        android:enabled="false" />
+        android:layout_alignLeft="@id/edtEmailEx"/>
+    <!--android:enabled="false"-->
     <TextView
         android:id="@+id/txtTelEx"
         android:layout_width="wrap_content"
@@ -66,6 +66,6 @@
         android:hint="설명"
         android:layout_toRightOf="@id/txtTelEx"
         android:layout_below="@id/edtNameEx"
-        android:textSize="15sp"
-        android:enabled="false" />
+        android:textSize="15sp"/>
+    <!--android:enabled="false"-->
 </RelativeLayout>

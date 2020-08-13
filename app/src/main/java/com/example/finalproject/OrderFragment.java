@@ -8,6 +8,7 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -23,6 +24,7 @@ import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -32,10 +34,13 @@ import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
+import retrofit2.http.Url;
 
 import static com.example.finalproject.RemoteService.BASE_URL_FINALPRODUCT;
+import java.net.*;
 
 public class OrderFragment extends Fragment {
+
     Retrofit retrofit;
     RemoteService remoteService;
 
@@ -54,7 +59,25 @@ public class OrderFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_order, container, false);
+        //getSupportActionBar().setTitle("주문");
+        //((AppCompatActivity)getActivity()).getSupportActionBar().setTitle("주문");
         // Inflate the layout for this fragment
+        /*
+        URL url = null;
+        try {
+            url = new URL("http://192.168.0.15:8088/finalProduct/list.jsp");
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        }
+        HttpURLConnection conn = null;
+        try {
+            conn = (HttpURLConnection) url.openConnection();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        conn.setConnectTimeout(200000);
+        */
+
         edtOrderSearch = view.findViewById(R.id.edtOrderSearch);
 
         retrofit = new Retrofit.Builder().baseUrl(BASE_URL_FINALPRODUCT).addConverterFactory(GsonConverterFactory.create()).build();
@@ -74,11 +97,16 @@ public class OrderFragment extends Fragment {
         //orderAdapter = new OrderAdapter(getActivity(),arrayOrder);
         orderAdapter = new OrderAdapter();
         list.setAdapter(orderAdapter);
+
+
+
         return view;
 
     }
 
     public void CallData(String order, String query){
+
+
         Call<List<OrderVO>> call = remoteService.listProduct(order, query);
         call.enqueue(new Callback<List<OrderVO>>() {
             @Override
@@ -91,6 +119,7 @@ public class OrderFragment extends Fragment {
             @Override
             public void onFailure(Call<List<OrderVO>> call, Throwable t) {
                 System.out.println("대실패");
+                t.printStackTrace();
             }
         });
     }
@@ -158,7 +187,9 @@ public class OrderFragment extends Fragment {
                                 intent.putExtra("productname",arrayOrder.get(getAdapterPosition()).getProductname());
                                 intent.putExtra("price",arrayOrder.get(getAdapterPosition()).getPrice());
                                 intent.putExtra("image",arrayOrder.get(getAdapterPosition()).getImage());
-                                startActivityForResult(intent,3);
+                                intent.putExtra("email",OrderActivity.email);
+                                //startActivityForResult(intent,3);
+                                startActivity(intent);
                             }
                         });
                         box.setNegativeButton("아니오",null);

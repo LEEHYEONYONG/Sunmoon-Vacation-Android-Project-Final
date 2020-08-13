@@ -18,6 +18,17 @@ public class OrderVO {
     private String ordertime;//주문시간
     private int count;//개수
 
+    /*기타*/
+    private int sumprice;//합계
+
+    public int getSumprice() {
+        return sumprice;
+    }
+
+    public void setSumprice(int sumprice) {
+        this.sumprice = sumprice;
+    }
+
     public String getEmail() {
         return email;
     }

@@ -16,7 +16,7 @@ import com.google.android.material.tabs.TabLayout;
 import java.util.ArrayList;
 
 public class OrderActivity extends AppCompatActivity {
-    String email;//MainActivity에서 받아온 이메일(아이디)
+    public static String email;//MainActivity에서 받아온 이메일(아이디)
     ViewPager pager;
     TabLayout tab;
     PageAdapter ad;

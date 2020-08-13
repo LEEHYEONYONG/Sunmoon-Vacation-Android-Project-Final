@@ -1,20 +1,105 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.drawerlayout.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
     tools:context=".CheckActivity"
-    android:orientation="vertical">
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="id"
-        android:textSize="30sp"/>
-    <Button
-        android:id="@+id/btnOrderFinal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="주문하기"/>
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
-</LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0sp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="주문확인"
+                android:textSize="30sp"
+                android:layout_marginBottom="10sp"/>
+            <ImageView
+                android:id="@+id/imgCheck"
+                android:layout_width="150sp"
+                android:layout_height="150sp"
+                android:src="@mipmap/ic_launcher"
+                android:layout_marginBottom="30sp"/>
+            <TextView
+                android:id="@+id/txtNameCheck"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="상품이름"
+                android:textSize="20sp"
+                android:layout_marginBottom="10sp"/>
+            <TextView
+                android:id="@+id/txtPriceCheck"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="상품가격"
+                android:textSize="20sp"
+                android:layout_marginBottom="10sp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="수량"
+                android:textSize="20sp"
+                android:layout_marginBottom="10sp"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginBottom="10sp">
+                <Button
+                    android:id="@+id/btnMinus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="-"
+                    android:layout_marginRight="10sp"/>
+                <TextView
+                    android:id="@+id/txtCountCheck"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1"
+                    android:textSize="20sp"
+                    android:layout_marginRight="10sp"/>
+                <Button
+                    android:id="@+id/btnPlus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="+"/>
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="총가격: "
+                android:textSize="20sp" />
+            <TextView
+                android:id="@+id/txtSumPriceCheck"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="총가격"
+                android:textSize="20sp" />
+        </LinearLayout>
+        <Button
+            android:id="@+id/btnOrderFinal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="주문하기"
+            android:layout_alignParentBottom="true"/>
+    </LinearLayout>
+
+
+
+</androidx.drawerlayout.widget.DrawerLayout>
