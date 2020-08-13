@@ -34,5 +34,10 @@ public interface RemoteService {
     Call<List<OrderVO>> listProduct(@Query("order") String order, @Query("query") String query);
 
 
+    /*기타*/
+    @GET("select.jsp")
+    Call<List<OrderVO>> listOrder();
+
+
 
 }
