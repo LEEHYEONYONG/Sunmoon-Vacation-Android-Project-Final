@@ -36,7 +36,7 @@ public interface RemoteService {
 
     /*기타*/
     @GET("select.jsp")
-    Call<List<OrderVO>> listOrder();
+    Call<List<OrderVO>> listOrder(@Query("email") String email);
 
 
 

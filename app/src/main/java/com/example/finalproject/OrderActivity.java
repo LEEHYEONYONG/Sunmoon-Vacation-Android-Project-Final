@@ -20,7 +20,8 @@ public class OrderActivity extends AppCompatActivity {
     ViewPager pager;
     TabLayout tab;
     PageAdapter ad;
-    ArrayList<Fragment> array;
+    //ArrayList<Fragment> array;
+    ArrayList<Fragment> array = new ArrayList<>();
 
 
     @Override
@@ -45,12 +46,12 @@ public class OrderActivity extends AppCompatActivity {
         tab.addTab(tab.newTab().setText("정보"));
         tab.getTabAt(2).setIcon(R.drawable.ic_baseline_info_24);
 
-        array=new ArrayList<>();
+        //array=new ArrayList<>();
         array.add(new OrderFragment());
         array.add(new ListFragment());
         array.add(new InformationFragment());
 
-        ad = new PageAdapter(getSupportFragmentManager(),FragmentStatePagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
+        ad = new PageAdapter(getSupportFragmentManager()/*,FragmentStatePagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT*/);
         pager.setAdapter(ad);
         pager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tab));
         tab.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
@@ -77,11 +78,11 @@ public class OrderActivity extends AppCompatActivity {
         public PageAdapter(@NonNull FragmentManager fm, int behavior) {
             super(fm, behavior);
         }
-        /*
+
         public PageAdapter(@NonNull FragmentManager fm) {
             super(fm);
         }
-        */
+
 
 
 

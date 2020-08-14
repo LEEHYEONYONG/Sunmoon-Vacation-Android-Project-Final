@@ -78,7 +78,7 @@ public class OrderFragment extends Fragment {
         conn.setConnectTimeout(200000);
         */
 
-        edtOrderSearch = view.findViewById(R.id.edtOrderSearch);
+        //edtOrderSearch = view.findViewById(R.id.edtOrderSearch);
 
         retrofit = new Retrofit.Builder().baseUrl(BASE_URL_FINALPRODUCT).addConverterFactory(GsonConverterFactory.create()).build();
         remoteService = retrofit.create(RemoteService.class);
